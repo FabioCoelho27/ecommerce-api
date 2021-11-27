@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :productable, polymorphic: true
-  has_many :product_categories, dependent: :restrict_with_error
+  
+  has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories
 
   validates :name, presence: true, uniqueness: { case_sensitive: false}

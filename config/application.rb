@@ -41,5 +41,7 @@ module EcommerceApi
     config.i18n.default_locale = :'pt-BR'
 
     config.api_only = true
+
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
   end
 end
