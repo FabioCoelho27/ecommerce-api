@@ -138,7 +138,7 @@ RSpec.describe "Admin V1 Categories as :admin", type: :request do
     end
 
     it 'removes all associated product categories' do
-      product_categories = create_list(:product_category,3, category: category)
+      product_categories = create_list(:product_category, 3, category: category)
       delete url, headers: auth_header(user)
       expected_product_categories = ProductCategory.where(id: product_categories.map(&:id))
       expect(expected_product_categories.count).to eq 0
